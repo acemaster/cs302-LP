@@ -16,3 +16,41 @@ if any of P[n,1,x] is true (x is iterated over the set s, where s are all the in
 else
   S is not member of language
 */
+
+
+
+#include <iostream>
+
+//productions will be of the Chomsky normal form r->a or r->r1r2 
+
+
+int main(){
+	char grammar[100];
+	char nts[100];
+	char unitproductions[100][100];
+	char normalproductions[100][100];
+	printf("Please enter the number of characters in grammar\n");
+	int ngrammar;
+	scanf("%d",&ngrammar);
+	for (int i = 0; i < ngrammar; ++i)
+	{
+		scanf("%c",&grammar[i]);
+	}
+	printf("Please enter the number of non terminal symbols\n");
+	int nnts;
+	scanf("%d",&nnts);
+	for (int i = 0; i < nnts; ++i)
+	{
+		scanf("%c",&nts[i]);
+	}
+	printf("Set the unit productions: \n");
+	char a,b;
+	printf("R->a form: \n");
+	while(1){
+		scanf("%c",a);
+	}
+
+
+}
+
+
