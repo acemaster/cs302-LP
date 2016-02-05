@@ -1,11 +1,8 @@
-%{
-
-#include <stdlib.h>
-
-%}
 letter [a-zA-Z]  
 digit[0-9]  
-%%  
+%%
+"#"+({letter|" "}*)+("<"|"\"")+({letter}({letter}|{digit})*)+(">"|"\"") printf("\n%s\tis a preprocessor",yytext);  
+("int"|"void"|"float"|"char"|"")+("*"|" ")*+({letter}({letter}|{digit})*)+"("+(({letter}|{digit}|" "|"*"|",")*)+")" printf("\n%s\tis a function",yytext);  
 {digit}+("E"("+"|"-")?{digit}+)? printf("\n%s\tis real number",yytext);  
 {digit}+"."{digit}+("E"("+"|"-")?{digit}+)? printf("\n%s\t is floating pt no ",yytext);  
 "if"|"else"|"int"|"char"|"scanf"|"printf"|"switch"|"return"|"struct"|"do"|"while"|"void"|"for"|"float" printf("\n%s\t is keywords",yytext);  
@@ -13,16 +10,16 @@ digit[0-9]
 {letter}({letter}|{digit})* printf("\n%s\tis identifier",yytext);  
 "&&"|"<"|">"|"<="|">="|"="|"+"|"-"|"?"|"*"|"/"|"%"|"&"|"||" printf("\n%s\toperator ",yytext);  
 "{"|"}"|"["|"]"|"("|")"|"#"|"'"|"."|"\""|"\\"|";"|"," printf("\n%s\t is a special character",yytext);  
-"%d"|"%s"|"%c"|"%f"|"%e" printf("\n%s\tis a format specifier",yytext);  
+"%d"|"%s"|"%c"|"%f"|"%e" printf("\n%s\tis a format specifier",yytext);
 %%
 
 int yywrap()  
 {  
 return 1;  
 }  
-int main(int argc,char *argv[])  
+int main(int argc,char **argv)  
 {
-int yin=fopen(argv[1],"r");  
+yyin=fopen(argv[1],"r");  
 yylex();  
 fclose(yyin);  
 return 0;  

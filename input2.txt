@@ -1,0 +1,8 @@
+#include<iostream>
+#
+int a;
+int main(char argc,char **argv)
+{
+int a=b+c;
+date(int d);
+}
