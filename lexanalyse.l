@@ -1,7 +1,6 @@
 letter [a-zA-Z]  
 digit[0-9]  
 %%
-"#"+({letter|" "}*)+("<"|"\"")+({letter}({letter}|{digit})*)+(">"|"\"") printf("\n%s\tis a preprocessor",yytext);  
 ("int"|"void"|"float"|"char"|"")+("*"|" ")*+({letter}({letter}|{digit})*)+"("+(({letter}|{digit}|" "|"*"|",")*)+")" printf("\n%s\tis a function",yytext);  
 {digit}+("E"("+"|"-")?{digit}+)? printf("\n%s\tis real number",yytext);  
 {digit}+"."{digit}+("E"("+"|"-")?{digit}+)? printf("\n%s\t is floating pt no ",yytext);  
