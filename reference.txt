@@ -1,0 +1,6 @@
+String.compare()
+map< a ,b> c;
+map<a.b>::iterator d;
+d=c.begin()
+d->first ---> a
+d->second ----> b
